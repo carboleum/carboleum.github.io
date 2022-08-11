@@ -14,15 +14,33 @@ categories: jekyll
  
  ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot.png)
  
+ Le rendement vaut :
+ 
+ $$ r_0(t_n) = { Prix(t_n)\over Prix(t_{n-1}) } $$
+ 
+![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-1.png)
+ 
+ Cette définition du rendement n'est pas la plus orthodoxe. Elle en est une simplification qui, dans le cadre du développement qui suit, est parfaitement satisfaisante.
+ 
  <h3> Signaux et positions </h3>
  
- La stratégie consiste à déterminer des situations favorables à l'achat et des situations favorables à la vente. Entre le \\(1^{er}\\) signal d'achat et le \\(1^{er}\\) signal de vente suivant, on est en position.
- 
-\\[ SIG_{achat}(t_n) = \begin{cases} 1 & \text{si situation favorable à l'achat} \\\\ 0 & \text{sinon} \end{cases} \\]
-
-\\[ SIG_{vente}(t_n) = \begin{cases} 1 & \text{si situation favorable à la vente} \\\\ 0 & \text{sinon} \end{cases} \\]
+ La stratégie consiste à déterminer selon certains critère établis, les instants \\(t_n\\) pendant lesquels le marché est favorable à l'achat (\\(SIG_{achat}(t_n) = 1\\)) et à la vente (\\(SIG_{vente}(t_n) = 1\\)). Entre le \\(1^{er}\\) signal d'achat et le \\(1^{er}\\) signal de vente suivant, on est en position.
 
 \\[ POS(t_n) = \begin{cases} 1 & \text{si } SIG_{achat}(t_n) = 1\\\\ 0 & \text{si } SIG_{vente}(t_n) = 1 \\\\ POS(t_{n-1}) & \text{sinon} \end{cases} \\]
+
+Si, intellectuellement, cette proposition tient la route, l'implémentation n'est pas si simple et demande une étape intermédiaire:
+
+\\[ SIG_0(t_n) = SIG_{achat}(t_n) - SIG_{vente}(t_n) \\]
+
+\\[ SIG_1(t_n) = \begin{cases} SIG_0(t_n) & \text{si } SIG_0(t_n) \ne 0 \\\\ SIG_0(t_{n-1}) & \text{sinon} \end{cases} \\]
+
+$$ POS \equiv SIG_1 > 0 $$
+
+Cas particulier : le signal de vente est l'opposé du signal d'achat
+
+$$ SIG_{vente} = 1 - SIG_{achat} \ \rightarrow\  POS \equiv SIG_{achat} $$
+
+Illustrations graphiques
 
 \\(SIG_{achat}\\) :
 
@@ -32,18 +50,6 @@ categories: jekyll
 
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-3.png)
 
-\\(POS\\) :
-
-![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-6.png)
-
-L'implémentation de cette proposition impose une étape supplémentaire :
-
-\\[ SIG_0(t_n) = SIG_{achat}(t_n) - SIG_{vente}(t_n) \\]
-
-\\[ SIG_1(t_n) = \begin{cases} SIG_0(t_n) & \text{si } SIG_0(t_n) \ne 0 \\\\ SIG_0(t_{n-1}) & \text{sinon} \end{cases} \\]
-
-$$ POS \equiv SIG_1 > 0 $$
-
 \\(SIG_0\\) :
 
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-4.png)
@@ -52,14 +58,12 @@ $$ POS \equiv SIG_1 > 0 $$
 
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-5.png)
 
-Cas particulier :
+\\(POS\\) :
 
-$$ SIG_{vente} = 1 - SIG_{achat} \ \rightarrow\  POS \equiv SIG_{achat} $$
+![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-6.png)
 
 
 <h3> Rendement </h3>
-
-$$ r_0(t_n) = { Prix(t_n)\over Prix(t_{n-1}) } $$
 
 Interprétation du signal $POS$:
 
