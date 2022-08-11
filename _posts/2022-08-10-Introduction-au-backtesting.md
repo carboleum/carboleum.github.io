@@ -20,11 +20,11 @@ categories: jekyll
  
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-1.png)
  
- Cette définition du rendement n'est pas la plus orthodoxe. Elle en est une simplification qui, dans le cadre du développement qui suit, est parfaitement satisfaisante.
+ Cette définition du rendement n'est pas des plus orthodoxes. Elle en est une simplification qui, dans le cadre du développement qui suit, est parfaitement satisfaisante.
  
  <h3> Signaux et positions </h3>
  
- La stratégie consiste à déterminer selon certains critère établis, les instants \\(t_n\\) pendant lesquels le marché est favorable à l'achat (\\(SIG_{achat}(t_n) = 1\\)) et à la vente (\\(SIG_{vente}(t_n) = 1\\)). Entre le \\(1^{er}\\) signal d'achat et le \\(1^{er}\\) signal de vente suivant, on est en position.
+ La stratégie consiste à déterminer selon certains critères établis préalablement, les instants \\(t_n\\) pendant lesquels le marché est favorable à l'achat (\\(SIG_{achat}(t_n) = 1\\)) et/ou à la vente (\\(SIG_{vente}(t_n) = 1\\)). Entre le \\(1^{er}\\) signal d'achat et le \\(1^{er}\\) signal de vente suivant, on est en position.
 
 \\[ POS(t_n) = \begin{cases} 1 & \text{si } SIG_{achat}(t_n) = 1\\\\ 0 & \text{si } SIG_{vente}(t_n) = 1 \\\\ POS(t_{n-1}) & \text{sinon} \end{cases} \\]
 
