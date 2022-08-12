@@ -9,6 +9,8 @@ categories: jekyll
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
+  
+<h2> Approche mathématique </h2>
 
  Soit le cours d'un actif (ici BTC au 24/07/2022 - périodes de 12h) : 
  
@@ -28,20 +30,6 @@ categories: jekyll
 
 \\[ POS(t_n) = \begin{cases} 1 & \text{si } SIG_{achat}(t_n) = 1\\\\ 0 & \text{si } SIG_{vente}(t_n) = 1 \\\\ POS(t_{n-1}) & \text{sinon} \end{cases} \\]
 
-Si, intellectuellement, cette proposition tient la route, l'implémentation n'est pas si simple et demande une étape intermédiaire:
-
-\\[ SIG_0(t_n) = SIG_{achat}(t_n) - SIG_{vente}(t_n) \\]
-
-\\[ SIG_1(t_n) = \begin{cases} SIG_0(t_n) & \text{si } SIG_0(t_n) \ne 0 \\\\ SIG_0(t_{n-1}) & \text{sinon} \end{cases} \\]
-
-$$ POS \equiv SIG_1 > 0 $$
-
-Cas particulier : le signal de vente est l'opposé du signal d'achat
-
-$$ SIG_{vente} = 1 - SIG_{achat} \ \rightarrow\  POS \equiv SIG_{achat} $$
-
-Illustrations graphiques
-
 \\(SIG_{achat}\\) :
 
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-2.png)
@@ -49,6 +37,16 @@ Illustrations graphiques
 \\(SIG_{vente}\\) :
 
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-3.png)
+
+\\(POS\\) :
+
+![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-6.png)
+
+Si, sur le papier, cette proposition est séduisante par sa simlicité, l'implémentation demande une étape intermédiaire:
+
+\\[ SIG_0(t_n) = SIG_{achat}(t_n) - SIG_{vente}(t_n) \\]
+
+\\[ SIG_1(t_n) = \begin{cases} SIG_0(t_n) & \text{si } SIG_0(t_n) \ne 0 \\\\ SIG_0(t_{n-1}) & \text{sinon} \end{cases} \\]
 
 \\(SIG_0\\) :
 
@@ -58,10 +56,11 @@ Illustrations graphiques
 
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-5.png)
 
-\\(POS\\) :
+$$ POS \equiv SIG_1 > 0 $$
 
-![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-6.png)
+Cas particulier : le signal de vente est l'opposé du signal d'achat
 
+$$ SIG_{vente} = 1 - SIG_{achat} \ \rightarrow\  POS \equiv SIG_{achat} $$
 
 <h3> Rendement </h3>
 
@@ -98,3 +97,4 @@ Avec:
   * en grisé, le rendement cumulé en HOLD
   * en bleu, le rendement brut cumulé de la stratégie
   * en rouge, le rendement net cumulé de la stratégie 
+
