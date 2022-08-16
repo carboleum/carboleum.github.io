@@ -64,7 +64,7 @@ $$ SIG_{vente} = 1 - SIG_{achat} \ \rightarrow\  POS \equiv SIG_{achat} $$
 
 <h3> Rendement </h3>
 
-Interprétation du signal $POS$:
+Interprétation du signal \\(POS\\):
 
   * \\( POS(t_{n-1}) = 0 \space \& \space POS(t_n) = 0 \rightarrow \\) Hors position de \\(t_{n-1}\\) à \\(t_n\\) (\\(\rightarrow r_{strat}(t_n) = 1\\))
   * \\( POS(t_{n-1}) = 0 \space \& \space POS(t_n) = 1 \rightarrow \\) Hors position de \\(t_{n-1}\\) à \\(t_n\\) (\\(\rightarrow r_{strat}(t_n) = 1\\)) et achat à l'instant \\(t_n\\) 
@@ -75,7 +75,7 @@ Interprétation du signal $POS$:
 
 $$
 \begin{array}{cc|c|c}
-POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\\\ \hline
+POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\ \hline
 0 & 0 & 0 & =1 \\
 0 & 1 & 0 & =1 \\
 1 & 1 & 1 & =r_0(t_n) \\
