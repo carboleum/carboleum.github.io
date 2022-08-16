@@ -76,10 +76,10 @@ Interprétation du signal $POS$:
 \\(
 \begin{array}{cc|c|c}
 POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\\\ \hline
-0 & 0 & 0 & 1
-0 & 1 & 0 & 1
-1 & 1 & 1 & r_0(t_n)
-1 & 0 & 1 & r_0(t_n)
+0 & 0 & 0 & 1 \\\\
+0 & 1 & 0 & 1 \\\\
+1 & 1 & 1 & r_0(t_n) \\\\
+1 & 0 & 1 & r_0(t_n) \\\\
 \end{array}
 \\)
 
