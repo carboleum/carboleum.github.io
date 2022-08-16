@@ -73,7 +73,7 @@ Interprétation du signal $POS$:
 
 \\( \Rightarrow r_{strat}(t_n) \\) est conditionné par \\( POS(t_{n-1}) \\)
 
-\\[
+$$
 \begin{array}{cc|c|c}
 POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\\\ \hline
 0 & 0 & 0 & 1 \\\\
@@ -81,7 +81,7 @@ POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\\\ \hline
 1 & 1 & 1 & r_0(t_n) \\\\
 1 & 0 & 1 & r_0(t_n) \\\\
 \end{array}
-\\]
+$$
 
 $$ r_{strat}(t_n) = \begin{cases} { Prix(t_n)\over Prix(t_{n-1}) } & \text{si } POS(t_{n-1}) = 1\\ 1 & \text{sinon} \end{cases}  $$
 
