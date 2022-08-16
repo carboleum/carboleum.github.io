@@ -75,7 +75,7 @@ Interprétation du signal $POS$:
 
 \\(
 \begin{array}{cc|cc}
-POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\ \haine
+POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\\\ \hline
 0 & 0 & 0 & 1
 \end{array}
 \\)
