@@ -73,6 +73,13 @@ Interprétation du signal $POS$:
 
 \\( \Rightarrow r_{strat}(t_n) \\) est conditionné par \\( POS(t_{n-1}) \\)
 
+\\(
+\begin{array}{cc|cc}
+POS(t_{n-1}) & POS(t_n) & [t_{n-1}, t_n] & r_{strat}(t_n) \\ \haine
+0 & 0 & 0 & 1
+\end{array}
+\\)
+
 $$ r_{strat}(t_n) = \begin{cases} { Prix(t_n)\over Prix(t_{n-1}) } & \text{si } POS(t_{n-1}) = 1\\ 1 & \text{sinon} \end{cases}  $$
 
 Si, en clôture de la bougie précédente, on a une position ouverte (\\(POS(t_{n-1})=1\\)), alors le rendement de la bougie actuelle vaut le rapport entre le prix de clôture de la bougie actuelle et celui de la précédente, sinon, le rendement vaut 1.
