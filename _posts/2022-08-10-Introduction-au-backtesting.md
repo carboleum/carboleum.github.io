@@ -75,7 +75,6 @@ Interprétation du signal \\(POS\\):
 
 $$
 \begin{array}{ccc|c}
-\multicolumn{3}{c|}{POS} & \\
 t_{n-1} & t_n & [t_{n-1}, t_n] & r_{strat}(t_n) \\ 
 \hline \\
 0 & 0 & 0 & =1 \\
