@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction au backtesting"
+title:  "Initiation au backtesting - Approche mathématique"
 date:   2022-08-10 20:12:04 +0200
 categories: jekyll
 ---
@@ -10,9 +10,7 @@ categories: jekyll
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
   
-<h2> Approche mathématique </h2>
-
- Soit le cours d'un actif (ici BTC au 24/07/2022 - périodes de 12h) : 
+Soit le cours d'un actif (ici BTC au 24/07/2022 - périodes de 12h) : 
  
  ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot.png){:style="display:block; margin-left:auto; margin-right:auto"}
  
