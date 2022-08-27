@@ -15,4 +15,4 @@ categories: jekyll
 
 [How to setup a Jekyll powered Github Pages blog (Nathan Dench)](https://ndench.github.io/jekyll/setup-jekyll-on-github-pages)
 
-
+.
