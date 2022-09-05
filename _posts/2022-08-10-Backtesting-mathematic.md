@@ -20,7 +20,7 @@ Dans l'interval \\([t_{n-1},t_n]\\), le rendement vaut :
  
 ![Graph BTC - 12h]({{site.url}}/assets/bokeh_plot-1.png){:style="display:block; margin-left:auto; margin-right:auto"}
  
- Cette définition du rendement n'est pas des plus orthodoxes. Elle en est une simplification qui, dans le cadre du développement qui suit, est parfaitement satisfaisante. Petite particularité: le neutre est 1. \\(P(t_n) = P(t_{n-1} \rightarrow r_0 = 1\\)
+ Cette définition du rendement n'est pas des plus orthodoxes. Elle en est une simplification qui, dans le cadre du développement qui suit, est parfaitement satisfaisante. Petite particularité: ici le rendement neutre n'est pas 0, le neutre est 1. \\(Prix(t_n) = Prix(t_{n-1}) \rightarrow r_0 = 1\\)
  
  <h3> Signaux et positions </h3>
  
