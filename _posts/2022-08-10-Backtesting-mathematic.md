@@ -102,3 +102,7 @@ Avec:
   * en bleu, le rendement brut cumulé de la stratégie
   * en rouge, le rendement net cumulé de la stratégie 
 
+<h3> Implémentation </h3>
+
+[kissbacktest](https://github.com/carboleum/kissbacktest)
+
