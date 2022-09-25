@@ -66,38 +66,20 @@ SIG_in = (RSI > 60) & (SMA_200 < SMA_14)
 SIG_out = (RSI < 40)
 ```
 
-<h3> Signal </h3>
+<h3> calcul du rendement </h3>
 
-\\( SIG_0(t_n) = SIG_{achat}(t_n) - SIG_{vente}(t_n) \\)
-
-\\( SIG_1(t_n) = \begin{cases} SIG_0(t_n) & \text{si } SIG_0(t_n) \ne 0 \\\\ SIG_0(t_{n-1}) & \text{sinon} \end{cases} \\)
-
-\\( POS \equiv SIG_1 > 0 \\)
+Le développement mathématique se trouve dans [le post précédent](/trading/2022/08/10/Backtesting-mathematic.html)
 
 ```python
+# Signal
 SIG_0 = SIG_in.astype(int) - SIG_out.astype(int)
 SIG_1 = SIG_0.where(SIG_0!=0).ffill()
 POS = SIG_1 > 0
-```
-
-<h3> Calcul du rendement </h3>
-
-\\( r_0(t_n) = { Prix(t_n)\over Prix(t_{n-1}) } \\)
-
-\\( r_{strat}(t_n) = \begin{cases} { r_0(t_n) } & \text{si } POS(t_{n-1}) = 1 \\\\ 1 & \text{sinon} \end{cases} \\)
-
-\\( r_{fee}(t_n) = \begin{cases} 1-fee & \text{si } POS(t_{n-1}) + POS(t_n) = 1 \\\\ 1 & \text{sinon} \end{cases} \\)
-```python
+# Rendements
 r_0 = df.close / df.close.shift()
 r_strat = np.where(POS.shift(), r_0, 1)
 r_fee = np.where(POS.shift() + POS == 1, 1-0.0025, 1)
-```
-
-<h3> Rendement cumulé </h3>
-
-\\( R(t_n) = \prod_{i=1}^{t_n} \biggl( r_{strat}(i) \times r_{fee}(i) \biggr) \\)
-
-```python
+# Rendement cumulé
 R_net = np.nancumprod(r_strat * r_fee)
 ```
 
