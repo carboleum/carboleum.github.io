@@ -10,7 +10,7 @@ categories: trading
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
   
-Ce poste propose une implémentation en Python de la méthode minimaliste de backtesting présentée dans [le post précédent](/jekyll/2022/08/10/Backtesting-mathematic.html)
+Ce poste propose une implémentation en Python de la méthode minimaliste de backtesting présentée dans [le post précédent](/trading/2022/08/10/Backtesting-mathematic.html)
   
 <h3> Installation libs </h3>
 
