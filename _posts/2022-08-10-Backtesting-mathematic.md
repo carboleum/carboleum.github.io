@@ -89,8 +89,6 @@ Même raisonnement que plus haut:
 
 $$ r_{fee}(t_n) = \begin{cases} 1-fee & \text{si } POS(t_{n-1}) + POS(t_n) = 1 \\ 1 & \text{sinon} \end{cases} $$
 
-$$ r_{fee}(t_n) = \begin{cases} 1-fee & \text{si } POS(t_{n-1}) + POS(t_n) = 1 \\ 1 & \text{sinon} \end{cases} $$
-
 <h3> Rendement cumulé </h3>
 
 $$ R(t_n) = \prod_{i=1}^{t_n} \biggl( r_{strat}(i) \times r_{fee}(i) \biggr) $$
