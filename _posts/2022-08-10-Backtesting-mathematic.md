@@ -2,7 +2,7 @@
 layout: post
 title:  "Initiation au backtesting - Approche mathématique"
 date:   2022-08-10 20:12:04 +0200
-categories: jekyll
+categories: trading
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -86,6 +86,8 @@ $$ r_{strat}([t_{n-1},t_n]) = \begin{cases} { Prix(t_n)\over Prix(t_{n-1}) } & \
 Lors de chaque transaction (achat et vente), la plateforme prend un fee équivalent à \\(fee \%\\):
 
 Même raisonnement que plus haut:
+
+$$ r_{fee}(t_n) = \begin{cases} 1-fee & \text{si } POS(t_{n-1}) + POS(t_n) = 1 \\ 1 & \text{sinon} \end{cases} $$
 
 $$ r_{fee}(t_n) = \begin{cases} 1-fee & \text{si } POS(t_{n-1}) + POS(t_n) = 1 \\ 1 & \text{sinon} \end{cases} $$
 
